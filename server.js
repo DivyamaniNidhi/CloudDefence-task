@@ -47,8 +47,7 @@ app.get("/repositories", async (req, res) => {
     const accessToken = tokenResponse.data.access_token;
     console.log("Access Token:", accessToken);
 
-    // You might want to fetch the user ID here and redirect to a new endpoint
-    // For example, fetch the user details
+    // fetch the user ID here and redirect to a new endpoint
     const userResponse = await axios.get("https://api.github.com/user", {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
